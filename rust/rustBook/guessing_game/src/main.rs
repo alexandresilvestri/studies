@@ -10,8 +10,11 @@ fn main() {
     io::stdin()
         .read_line(&mut guess)
         .expect("Failed to read line");
-    
-    println!("Guess the number: ");
+
+    let guess: u32 = guess.trim().parse()
+        .expect("Please type a number!");
+    println!("Your guess: {guess}");
+    println!("The answer: {secret_number}");
     match guess.cmp(&secret_number) {
         Ordering::Less => println!("Too small!"),
         Ordering::Greater => println!("Too big!"),

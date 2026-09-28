@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-
-  typedef struct node {
+typedef struct node {
     int number;
     struct node *next;
   } Node;
+
+void printStoredNumbers(Node *head);
+
+int main(void) {
 
   Node *list = NULL;
   int qty;
@@ -25,13 +27,19 @@ int main(void) {
     list = tmp;
   }
 
-  Node *ptr = list;
-  int counter = 1;
-  while(ptr != NULL) {
-    printf("Value on node %i is: %i\n", counter, ptr->number);
-    ptr = ptr->next;
-    counter++;
-  };
+  printStoredNumbers(list);
 
   return 0;
 }
+
+  void printStoredNumbers(Node *head) {
+    Node *ptr = head;
+    int counter = 1;
+
+    while(ptr != NULL) {
+    printf("Value on node %i is: %i\n", counter, ptr->number);
+    ptr = ptr->next;
+    counter++;
+    };
+  };
+

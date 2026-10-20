@@ -1,2 +1,10 @@
 ./vscode
 target/
+
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+tfplan
+crash.log
+

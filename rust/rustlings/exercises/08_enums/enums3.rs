@@ -16,7 +16,6 @@ struct State {
     height: u64,
     position: Point,
     message: String,
-    // RGB color composed of red, green and blue.
     color: (u8, u8, u8),
     quit: bool,
 }
@@ -46,6 +45,7 @@ impl State {
     fn process(&mut self, message: Message) {
         // TODO: Create a match expression to process the different message
         // variants using the methods defined above.
+        self.message = ;
     }
 }
 
